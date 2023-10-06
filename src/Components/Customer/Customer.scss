@@ -1,0 +1,16 @@
+.custom-chatbot-container .rsc-container {
+    height: calc(100% - 60px);
+    width: auto;
+    // width: 1300px;
+    // margin-top: 50px;
+    //margin-left: 80px;
+}
+.custom-botchat-container .rsc-input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+}
+.custom-botchat-container {
+    display: flex;
+    justify-content: center;
+}

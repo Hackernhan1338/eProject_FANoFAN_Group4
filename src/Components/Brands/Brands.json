@@ -1,0 +1,19 @@
+[
+    {
+        "id" : 1,
+        "Name" : "Amazon" 
+    },
+    {
+        "id" : 2,
+        "Name" : "Dreo" 
+    },
+    {
+        "id" : 3,
+        "Name" : "Lasko" 
+    },
+    {
+        "id" : 4,
+        "Name" : "Levoit" 
+    }
+   
+]

@@ -1,0 +1,13 @@
+@import "../../variables/variables.scss";
+.mainmenu {
+    background-color: $background-color;
+
+    .mainmenu-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 700;
+        font-size: 20px;
+    }
+}
