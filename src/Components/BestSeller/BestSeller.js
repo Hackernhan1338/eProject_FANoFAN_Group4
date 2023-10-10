@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function BestSeller() {
   return (
@@ -37,7 +38,7 @@ function BestSeller() {
                   </Card.Title>
                 </NavLink>
                 <Card.Text className="price-card-products">
-                  {items.Price}
+                  ${items.Price}
                 </Card.Text>
                 <Card.Text className="star-card-products">
                   <i class="fa-sharp fa-solid fa-star"></i>

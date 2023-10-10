@@ -11,6 +11,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { Card } from "react-bootstrap";
 import Footer from "../Footer/Footer";
+import { motion } from "framer-motion";
 
 function ContactUs() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -51,9 +52,13 @@ function ContactUs() {
   };
 
   return (
-    <div>
-      <Container fluid="md">
-        <Row className="text-center mt-3 ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Container fluid="md" className="text-center">
+        <Row className="text-center mt-5 ">
           <h2 className="fw-bold">Please Give Us Your Information</h2>
         </Row>
         <Row className="mt-5 mb-4">
@@ -194,7 +199,7 @@ function ContactUs() {
         </Row>
       </Container>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 

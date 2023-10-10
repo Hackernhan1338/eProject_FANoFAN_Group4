@@ -1,3 +1,27 @@
+.Sort {
+  width: auto;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  background-color: #d4f0f0;
+  border: none;
+  color: black;
+}
+.Sort .option {
+  padding: 15px;
+  width: auto;
+  height: auto;
+  font-weight: 600;
+}
+
 .bestseller-title {
   font-weight: bold;
   font-size: 45px;
@@ -13,6 +37,24 @@
 }
 .sort-price .sort-price__label {
   margin-right: 30px;
+}
+
+.categories-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 700;
+  background-color: #b5e9fb;
+  width: 100%;
+  height: 100px;
+  color: black;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .card-products-categories {

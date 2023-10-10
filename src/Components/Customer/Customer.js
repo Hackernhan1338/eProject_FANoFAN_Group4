@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Chatbot from "react-simple-chatbot";
 import { Segment } from "semantic-ui-react";
 import "./Customer.scss";
+import { motion } from "framer-motion";
+import { Container } from "react-bootstrap";
 class CustomerServiceChat extends Component {
   constructor(props) {
     super(props);
@@ -190,11 +192,21 @@ class CustomerServiceChat extends Component {
     ];
 
     return (
-      <>
-        <Segment floated="left" className="custom-chatbot-container">
-          <Chatbot steps={steps} ref={(ref) => (this.chatbotRef = ref)} />
-        </Segment>
-      </>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Container>
+          <Segment floated="left" className="custom-chatbot-container">
+            <Chatbot
+              className="chatbox"
+              steps={steps}
+              ref={(ref) => (this.chatbotRef = ref)}
+            />
+          </Segment>
+        </Container>
+      </motion.div>
     );
   }
 }

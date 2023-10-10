@@ -21,7 +21,7 @@
             }
             .aboutus-img-company {
                 .img-company {
-                    width: 800px;
+                    max-width: 800px;
                     height: 400px;
                     object-fit: cover;
                     border-radius: 30px;
@@ -99,7 +99,7 @@
     }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
     .aboutus {
         .aboutus-content {
             margin-top: 50px;
@@ -122,8 +122,8 @@
                 }
                 .aboutus-img-company {
                     .img-company {
-                        width: 100%;
-                        height: auto;
+                        max-width: 800px;
+                        height: 400px;
                         object-fit: cover;
                         border-radius: 30px;
                         -webkit-border-radius: 30px;

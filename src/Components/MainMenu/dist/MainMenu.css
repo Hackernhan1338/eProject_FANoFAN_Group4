@@ -1,5 +1,7 @@
 .mainmenu {
   background-color: #b5e9fb;
+  text-align: start;
+  width: 100%;
 }
 .mainmenu .mainmenu-content {
   display: flex;
@@ -8,4 +10,13 @@
   align-items: center;
   font-weight: 700;
   font-size: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .mainmenu-content {
+    z-index: 5;
+  }
+  .mainmenu-content .mainmenu-item {
+    font-size: 14px;
+  }
 }

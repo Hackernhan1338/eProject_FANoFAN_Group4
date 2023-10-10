@@ -1,7 +1,7 @@
 import "./Footer.scss";
 
 import { Link } from "react-router-dom";
-import Logo from "../Header/imgHeader/LOGO2.png";
+import Logo from "./img-Footer/Logo-footer.png";
 
 function Footer() {
   return (
@@ -73,11 +73,12 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <div className="footer-final">
         <div className="text-hr">
           <hr />
         </div>
-        <p className="text-center">
+        <p className="footer-final-text">
           &copy; FANoFAN 2023. All Right Reservered.
         </p>
       </div>

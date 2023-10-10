@@ -37,7 +37,7 @@ function FeaturedProducts() {
                   </Card.Title>
                 </NavLink>
                 <Card.Text className="price-card-products">
-                  {items.Price}
+                  ${items.Price}
                 </Card.Text>
                 <Card.Text className="star-card-products">
                   <i class="fa-sharp fa-solid fa-star"></i>

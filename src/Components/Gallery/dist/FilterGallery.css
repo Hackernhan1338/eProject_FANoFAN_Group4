@@ -3,7 +3,7 @@
 }
 
 .gallery-item-filter {
-  background-color: #b5e9fb;
+  background-color: #d4f0f0;
   color: black;
   border: none;
   font-size: 18px;
@@ -22,13 +22,13 @@
 }
 
 .MainImg {
-  width: 400px;
+  width: auto;
   height: 300px;
   margin: 10px;
 }
 
 .OtherImg {
-  width: 200px;
+  width: auto;
   height: 150px;
   float: left;
   margin: 10px;

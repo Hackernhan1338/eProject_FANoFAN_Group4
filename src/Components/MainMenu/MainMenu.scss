@@ -1,7 +1,8 @@
 @import "../../variables/variables.scss";
 .mainmenu {
     background-color: $background-color;
-
+    text-align: start;
+    width: 100%;
     .mainmenu-content {
         display: flex;
         flex-direction: row;
@@ -9,5 +10,13 @@
         align-items: center;
         font-weight: 700;
         font-size: 20px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .mainmenu-content {
+        z-index: 5;
+        .mainmenu-item {
+            font-size: 14px;
+        }
     }
 }

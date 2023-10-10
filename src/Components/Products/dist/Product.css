@@ -2,6 +2,26 @@
   margin-right: 5px;
 }
 
+.Page {
+  padding: 0px 100px 0px 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  flex-direction: row;
+  list-style: none;
+}
+
+.Page-active {
+  border: 1px solid black;
+  width: 28px;
+  height: 28px;
+  border-radius: 20%;
+  background-color: #0e6eeb;
+  color: aliceblue;
+}
+
 .Img {
   width: auto;
   height: 250px;
@@ -10,13 +30,13 @@
 }
 
 .MainImg {
-  width: 400px;
+  width: auto;
   height: 300px;
   margin: 10px;
 }
 
 .OtherImg {
-  width: 200px;
+  width: auto;
   height: 150px;
   float: left;
   margin: 10px;
@@ -42,6 +62,21 @@
   align-items: center;
 }
 
+.table-spec {
+  border: none;
+  background-color: #d4f0f0;
+  color: black;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.table-spec:hover {
+  background-color: black;
+  color: white;
+}
+
 .Price1 {
   color: #d50e0e;
   text-align: center;
@@ -63,22 +98,25 @@
 }
 .Spec .col {
   padding: 0px 60px 0px 30px;
+  color: black;
 }
 
 .Type {
+  color: black;
   font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 10px 50px 10px 150px;
 }
 
 .buttonAdd {
+  padding: 10px;
   margin-bottom: 30px;
   width: 200px;
   height: 50px;
   text-align: center;
   padding: 10px;
-  background-color: #b5e9fb;
-  color: black;
+  background-color: black;
+  color: #b5e9fb;
   border: none;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -86,10 +124,17 @@
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   font-weight: bold;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
 }
 .buttonAdd:hover {
+  width: 210px;
   background-color: black;
   color: #b5e9fb;
+  font-size: 20px;
 }
 
 table {
@@ -100,11 +145,11 @@ table {
 
 td,
 th {
-  border: 1px solid #b5e9fb;
+  border: 1px solid #8bcfe1;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #b5e9fb;
+  background-color: #d4f0f0;
 }

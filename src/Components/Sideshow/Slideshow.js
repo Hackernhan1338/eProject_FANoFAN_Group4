@@ -17,7 +17,7 @@ function Slideshow() {
                 <p className="slogan1">Blow away the heat</p>
                 <p className="slogan2">Bring in comfort</p>
               </div>
-              <Button className="slideshow-details">
+              <Button className="slideshow-details1">
                 CHECK NOW <i class="fa-solid fa-arrow-right"></i>
               </Button>
             </div>
@@ -25,18 +25,18 @@ function Slideshow() {
         </Carousel.Item>
         <Carousel.Item>
           <img className="slideshow-img" src={slide2} alt="slide2" />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <Carousel.Caption className="start-5 end-100">
+            <Button className="slideshow-details2 ">
+              CHECK NOW <i class="fa-solid fa-arrow-right"></i>
+            </Button>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="slideshow-img" src={slide3} alt="slide3" />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+          <Carousel.Caption className="start-5 end-100">
+            <Button className="slideshow-details3 ">
+              CHECK NOW <i class="fa-solid fa-arrow-right"></i>
+            </Button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

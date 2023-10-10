@@ -5,10 +5,16 @@ import CEO from "./img-aboutus/Fouder.png";
 import Vision from "./img-aboutus/vision.png";
 import Product from "./img-aboutus/product.png";
 import "./AboutUs.scss";
+import { motion } from "framer-motion";
 
 function AboutUs() {
   return (
-    <div className="aboutus">
+    <motion.div
+      className="aboutus"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Container fluid="lg">
         <div className="aboutus-content">
           <div className="aboutus-title">
@@ -100,7 +106,7 @@ function AboutUs() {
       <div>
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

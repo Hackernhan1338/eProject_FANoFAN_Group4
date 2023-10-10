@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function MainMenu() {
   return (
-    <div className="mainmenu">
+    <div className="mainmenu text-start">
       <div className="mainmenu-content">
         <Navbar expand="lg">
           <Container fluid="md">
@@ -19,16 +19,16 @@ function MainMenu() {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="/" className="mainmenu-item me-3">
+                <Nav.Link href="/" className="mainmenu-item">
                   HOMEPAGE
                 </Nav.Link>
-                <Nav.Link href="/products" className="mainmenu-item me-3">
+                <Nav.Link href="/products" className="mainmenu-item">
                   PRODUCTS
                 </Nav.Link>
                 <NavDropdown
                   title="CATEGORY"
                   id="basic-nav-dropdown"
-                  className="mainmenu-item me-3"
+                  className="mainmenu-item"
                 >
                   {Category.map((item, index) => (
                     <NavDropdown.Item href={`/Category/${item.Id}`} key={index}>
@@ -39,7 +39,7 @@ function MainMenu() {
                 <NavDropdown
                   title="BRANDS"
                   id="navbarScrollingDropdown"
-                  className="mainmenu-item me-3"
+                  className="mainmenu-item"
                 >
                   {Brands.map((items, index) => (
                     <NavDropdown.Item href={`/brands/${items.id}`} key={index}>
@@ -47,13 +47,13 @@ function MainMenu() {
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
-                <Nav.Link href="/gallery" className="mainmenu-item me-3">
+                <Nav.Link href="/gallery" className="mainmenu-item ">
                   GALLERY
                 </Nav.Link>
-                <Nav.Link href="/feedback" className="mainmenu-item me-3">
+                <Nav.Link href="/feedback" className="mainmenu-item">
                   FEEDBACK
                 </Nav.Link>
-                <Nav.Link href="/customer" className="mainmenu-item me-3">
+                <Nav.Link href="/customer" className="mainmenu-item">
                   HELP CENTER
                 </Nav.Link>
                 <Nav.Link href="/contact" className="mainmenu-item">

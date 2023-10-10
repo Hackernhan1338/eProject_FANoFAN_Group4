@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Product from "../Data.json";
 import { Container, Row, Col } from "react-bootstrap";
-import FilterProduct from "../Categories/FilterProduct";
-import ShowProduct from "../Products/ShowProduct";
 import FilterGallery from "./FilterGallery";
 import ShowGallery from "./ShowGallery";
+//import GalleryPagination from "./Pagination";
+import MainPagination from "../Pagination/Pagination";
+import Footer from "../Footer/Footer";
+import { motion } from "framer-motion";
 
 const AllSelect = [
   "All",
@@ -26,8 +28,23 @@ function MainGallery() {
     setGalleryitem(GalleryProduct);
   }
 
+  const ProPerPage = 2;
+  const [Page, setPage] = useState(1);
+  function HandlePage({ selected: select }) {
+    setPage(select);
+  }
+
+  const cut = Page * ProPerPage;
+  const PageData = galleryitem.slice(cut, cut + ProPerPage);
+
+  const PageCount = Math.ceil(galleryitem.length / ProPerPage);
+
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Container className="mt-5 text-center">
         <Row>
           <Col>
@@ -36,11 +53,17 @@ function MainGallery() {
         </Row>
         <Row>
           <Col>
-            <FilterGallery Filterproduct={galleryitem} />
+            <FilterGallery Filterproduct={PageData} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <MainPagination PageCount={PageCount} HandlePage={HandlePage} />
           </Col>
         </Row>
       </Container>
-    </div>
+      <Footer />
+    </motion.div>
   );
 }
 

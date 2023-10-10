@@ -1,3 +1,12 @@
+.all-products-side {
+  background: linear-gradient(90deg, #1d67fd 35%, #29d2e1 62%);
+  width: 100%;
+  height: 100px;
+  color: white;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
 .bestseller-title {
   font-weight: bold;
   font-size: 50px;

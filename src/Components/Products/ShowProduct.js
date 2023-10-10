@@ -5,8 +5,9 @@ import Button from "react-bootstrap/Button";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import "./Product.scss";
+import Footer from "../Footer/Footer";
 
-function ShowProduct() {
+function ShowProduct({ Add, ProductCart }) {
   const { id } = useParams();
   let Detail = Product.filter((x) => x.ID == id);
   Detail = Detail[0];
@@ -41,7 +42,7 @@ function ShowProduct() {
             <Col className="MainProduct">
               <div className="MainProducts-content">
                 <Row className="Desc">{Detail.Description}</Row>
-                <Row className="Price1">{Detail.Price}</Row>
+                <Row className="Price1">$ {Detail.Price}</Row>
 
                 <Card.Text className="star-card-products">
                   <i class="fa-sharp fa-solid fa-star"></i>
@@ -51,13 +52,18 @@ function ShowProduct() {
                   <i class="fa-solid fa-star-half-stroke"></i>
                 </Card.Text>
                 <div className="button-add-cart">
-                  <Button className="buttonAdd text-center">ADD TO CART</Button>
+                  <Button
+                    className="buttonAdd text-center"
+                    onClick={() => Add(Detail)}
+                  >
+                    ADD TO CART
+                  </Button>
                 </div>
               </div>
               <Tabs
                 defaultActiveKey="profile"
                 id="justify-tab-example"
-                className="mb-3"
+                className="mb-3 "
                 justify
               >
                 <Tab eventKey="Spec" title="Specification" className="Spec">
@@ -67,7 +73,7 @@ function ShowProduct() {
                       <Row>Category : {Detail.Spec.Efd.Name}</Row>
                       <Row>Style : {Detail.Spec.Style}</Row>
                       <Row>Power Source : {Detail.Spec.Power}</Row> */}
-                    <table>
+                    <table className="table-spec1">
                       <tr>
                         <td>Brand</td>
                         <td>{Detail.Spec.Brand}</td>
@@ -120,7 +126,7 @@ function ShowProduct() {
                   <Row>Number of Speeds : {Detail.Spec.Type.Speeds}</Row>
                   <Row>Number of Blades : {Detail.Spec.Type.Blades}</Row>
                   <Row>Material : {Detail.Spec.Type.Material}</Row> */}
-                  <table>
+                  <table className="table-spec1">
                     <tr>
                       <td>Mounting Type</td>
                       <td>{Detail.Spec.Type.Mounting}</td>
@@ -144,15 +150,24 @@ function ShowProduct() {
                   </table>
                 </Tab>
                 <Tab eventKey="download" title="Download">
-                  <Button href={Detail.File} variant="outline-primary">
-                    Download
-                  </Button>
+                  <div className="text-center">
+                    <Button
+                      href={Detail.File}
+                      className="text-center table-spec"
+                    >
+                      Download
+                    </Button>
+                  </div>
                 </Tab>
               </Tabs>
             </Col>
           </Row>
+          {/* <Button className="buttonAdd" onClick={() => Add(Detail)}>
+            Add to Cart
+          </Button> */}
         </main>
       </Container>
+      <Footer />
     </div>
   );
 }

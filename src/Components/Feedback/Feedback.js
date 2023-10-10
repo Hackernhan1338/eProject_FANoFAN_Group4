@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import Modal from "react-bootstrap/Modal";
@@ -11,6 +11,8 @@ import "./Feedback.scss";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "../Footer/Footer";
+import { motion } from "framer-motion";
 
 function CustomService(props) {
   const { onRatingChange, onNextPage, ratings, ratingError } = props;
@@ -36,7 +38,7 @@ function CustomService(props) {
   }
 
   return (
-    <>
+    <div>
       <h3>How do you describe your overall satisfaction?</h3>
       <Form.Group controlId="serviceRating">
         <Form.Label>Service provided:</Form.Label>
@@ -78,7 +80,7 @@ function CustomService(props) {
       <Button className="next" onClick={onNextPage}>
         Next
       </Button>
-    </>
+    </div>
   );
 }
 
@@ -86,29 +88,32 @@ function Summary(props) {
   const { ratings, feedback, onPrevPage, onSubmit } = props;
 
   return (
-    <>
-      <h3>Summary</h3>
-      <h4>How do you describe your overall satisfaction?</h4>
-      <p>Service Rating: {ratings.serviceRating}</p>
-      <p>Product'Quality: {ratings.productQualityRating}</p>
-      <p>Support: {ratings.supportRating}</p>
-      <p>General satisfaction: {ratings.generalSatisfactionRating}</p>
-      <h5>Your review and comments</h5>
-      <p>Review and Comments: {feedback}</p>
-      <Button className="prev" onClick={onPrevPage}>
-        Prev
-      </Button>{" "}
-      <Button className="submit" onClick={onSubmit}>
-        Submit
-      </Button>
-    </>
+    <div>
+      <Container>
+        <h3>Summary</h3>
+        <h4>How do you describe your overall satisfaction?</h4>
+        <p>Service Rating: {ratings.serviceRating}</p>
+        <p>Product'Quality: {ratings.productQualityRating}</p>
+        <p>Support: {ratings.supportRating}</p>
+        <p>General satisfaction: {ratings.generalSatisfactionRating}</p>
+        <h5>Your review and comments</h5>
+        <p>Review and Comments: {feedback}</p>
+        <Button className="prev" onClick={onPrevPage}>
+          Prev
+        </Button>{" "}
+        <Button className="submit" onClick={onSubmit}>
+          Submit
+        </Button>
+      </Container>
+    </div>
   );
 }
 
 function ProductFeedback() {
   const [page, setPage] = useState(1);
   const [feedback, setFeedback] = useState("");
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -122,7 +127,6 @@ function ProductFeedback() {
   const [ratingError, setRatingError] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
-
   const progress = ((page - 1) / 3) * 100;
 
   const handleRatingChange = (ratingType, ratingValue) => {
@@ -141,7 +145,6 @@ function ProductFeedback() {
   const handleNextPage = () => {
     if (page < 4) {
       if (page === 1) {
-        // Check if all rating categories are rated
         if (
           ratings.serviceRating === 0 ||
           ratings.productQualityRating === 0 ||
@@ -152,15 +155,14 @@ function ProductFeedback() {
           return;
         }
       } else if (page === 2) {
-        // Check if feedback is provided
         if (feedback.trim() === "") {
           setRatingError(true);
           return;
         }
       } else if (page === 3) {
-        // Check if user information is provided and terms are accepted
         if (
-          name.trim() === "" ||
+          firstName.trim() === "" ||
+          lastName.trim() === "" ||
           email.trim() === "" ||
           phoneNumber.trim() === "" ||
           !acceptTerms
@@ -178,7 +180,6 @@ function ProductFeedback() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -198,150 +199,167 @@ function ProductFeedback() {
   };
 
   return (
-    <div>
-      <ProgressBar now={progress} variant="success" />
-      {page === 1 ? (
-        <CustomService
-          onRatingChange={handleRatingChange}
-          onNextPage={handleNextPage}
-          ratings={ratings}
-          ratingError={ratingError}
-        />
-      ) : page === 2 ? (
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="feedback">
-            <Form.Label>Your review and comments</Form.Label>
-            <Form.Control
-              placeholder="Write your review here.."
-              as="textarea"
-              rows={4}
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-            />
-          </Form.Group>
-          {ratingError && <p style={{ color: "red" }}>Required</p>}
-          <Button className="prev" onClick={handlePrevPage}>
-            Prev
-          </Button>{" "}
-          <Button className="next" onClick={handleNextPage}>
-            Next
-          </Button>
-        </Form>
-      ) : page === 3 ? (
-        <Form onSubmit={handleSubmit}>
-          <Row>
-            <Col md={6}>
-              <Form.Group className="mb-3" controlId="lastName">
-                <Form.Label className="custom-container">Last name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Last Name"
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
-                  disabled={submitted}
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6}>
-              <Form.Group className="mb-3" controlId="firstName">
-                <Form.Label className="custom-container">First name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="First Name"
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
-                  disabled={submitted}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-            <Form.Label className="custom-container">Email</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="name@example.com"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              disabled={submitted}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlPhone">
-            <Form.Label className="custom-container">Phone</Form.Label>
-            <PhoneInput
-              international
-              defaultCountry="VN"
-              value={phoneNumber}
-              onChange={(value) => setPhoneNumber(value)}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="acceptTerms">
-            <Form.Check
-              type="checkbox"
-              label="Please accept our Terms and Conditions"
-              checked={acceptTerms}
-              onChange={handleAcceptTermsChange}
-            />
-            {ratingError && !acceptTerms && (
-              <p style={{ color: "red" }}>
-                Please accept the Terms and Conditions
-              </p>
-            )}
-          </Form.Group>
-          <Button className="prev" onClick={handlePrevPage}>
-            Prev
-          </Button>{" "}
-          <Button className="next" onClick={handleNextPage}>
-            Next
-          </Button>
-          <Button variant="link" onClick={handleShowTermsModal}>
-            View Terms and Conditions
-          </Button>
-        </Form>
-      ) : page === 4 ? (
-        <div className="text-center">
-          {loading ? (
-            <>
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-              <p>Submitting...</p>
-            </>
-          ) : submitted ? (
-            <div className="check">
-              <FormCheck
-                type="checkbox"
-                checked={true}
-                disabled={true}
-                inline
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Container className="mt-3 text-center">
+        <ProgressBar now={progress} variant="success" />
+        {page === 1 ? (
+          <CustomService
+            onRatingChange={handleRatingChange}
+            onNextPage={handleNextPage}
+            ratings={ratings}
+            ratingError={ratingError}
+          />
+        ) : page === 2 ? (
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="feedback">
+              <Form.Label>Your review and comments</Form.Label>
+              <Form.Control
+                placeholder="Write your review here.."
+                as="textarea"
+                rows={4}
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
               />
-              <p>Thank you for your FeedBack!</p>
-            </div>
-          ) : (
-            <Summary
-              ratings={ratings}
-              feedback={feedback}
-              onPrevPage={handlePrevPage}
-              onSubmit={handleSubmit}
-            />
-          )}
-        </div>
-      ) : null}
+            </Form.Group>
+            {ratingError && <p style={{ color: "red" }}>Required</p>}
+            <Button className="mt-3 me-3 prev" onClick={handlePrevPage}>
+              Prev
+            </Button>{" "}
+            <Button className="mt-3 next" onClick={handleNextPage}>
+              Next
+            </Button>
+          </Form>
+        ) : page === 3 ? (
+          <Form onSubmit={handleSubmit} className="page-3">
+            <Form onSubmit={handleSubmit}>
+              <Row>
+                <Row>
+                  <Col md={6}>
+                    <Form.Group className="mb-3 " controlId="lastName">
+                      <Form.Label className="custom-container">
+                        Last name
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Last Name"
+                        onChange={(e) => setLastName(e.target.value)}
+                        value={lastName}
+                        disabled={submitted}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <Form.Group className="mb-3" controlId="firstName">
+                      <Form.Label className="custom-container">
+                        First name
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="First Name"
+                        onChange={(e) => setFirstName(e.target.value)}
+                        value={firstName}
+                        disabled={submitted}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+              </Row>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput2"
+              >
+                <Form.Label className="custom-container">Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="name@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  disabled={submitted}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlPhone">
+                <Form.Label className="custom-container">Phone</Form.Label>
+                <PhoneInput
+                  international
+                  defaultCountry="VN"
+                  value={phoneNumber}
+                  onChange={(value) => setPhoneNumber(value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="acceptTerms">
+                <Form.Check
+                  type="checkbox"
+                  label="Please accept our Terms and Conditions"
+                  checked={acceptTerms}
+                  onChange={handleAcceptTermsChange}
+                />
+                {ratingError && !acceptTerms && (
+                  <p style={{ color: "red" }}>
+                    Please accept the Terms and Conditions
+                  </p>
+                )}
+              </Form.Group>
+              <Button className="prev" onClick={handlePrevPage}>
+                Prev
+              </Button>{" "}
+              <Button className="next" onClick={handleNextPage}>
+                Next
+              </Button>
+              <Button variant="link" onClick={handleShowTermsModal}>
+                View Terms and Conditions
+              </Button>
+            </Form>
+          </Form>
+        ) : page === 4 ? (
+          <div className="text-center">
+            {loading ? (
+              <>
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+                <p>Submitting...</p>
+              </>
+            ) : submitted ? (
+              <div className="check">
+                <FormCheck
+                  type="checkbox"
+                  checked={true}
+                  disabled={true}
+                  inline
+                />
+                <p>Thank you for your FeedBack!</p>
+              </div>
+            ) : (
+              <Summary
+                ratings={ratings}
+                feedback={feedback}
+                onPrevPage={handlePrevPage}
+                onSubmit={handleSubmit}
+              />
+            )}
+          </div>
+        ) : null}
 
-      <Modal show={showTermsModal} onHide={handleCloseTermsModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Terms and Conditions</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {/* Add your Terms and Conditions content here */}
-          This is where you can provide your Terms and Conditions.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseTermsModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
+        <Modal show={showTermsModal} onHide={handleCloseTermsModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Terms and Conditions</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{/* ... (terms content) */}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseTermsModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
+      <Footer />
+    </motion.div>
   );
 }
 
