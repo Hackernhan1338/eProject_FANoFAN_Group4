@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function BestSeller() {
+function BestSeller({ Add }) {
   return (
     <Container fluid="md">
       <Row className="text-center mt-5 mb-3 ">
@@ -48,7 +48,9 @@ function BestSeller() {
                   <i class="fa-solid fa-star-half-stroke"></i>
                 </Card.Text>
 
-                <Button className="add-products">ADD TO CART</Button>
+                <Button className="add-products" onClick={() => Add(items)}>
+                  ADD TO CART
+                </Button>
               </Card.Body>
             </Card>
           </Col>

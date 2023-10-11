@@ -7,11 +7,11 @@ import "./Maincontent.scss";
 import Ad1 from "../Ads/Ad1";
 import Ad2 from "../Ads/Ads2";
 
-function Maincontent() {
+function Maincontent({ Add }) {
   return (
     <div>
       <Container fluid>
-        <BestSeller />
+        <BestSeller Add={Add} />
         <Ad2 />
         <FeaturedProducts />
         <Ad1 />

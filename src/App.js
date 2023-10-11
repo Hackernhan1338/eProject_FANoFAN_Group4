@@ -41,14 +41,23 @@ function App() {
       <div>
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/products" element={<MainProduct Add={HandleCart}/>} />
-            <Route path="/Category/:id" element={<FilterProduct Add={HandleCart}/>} />
+            <Route path="/" element={<Homepage Add={HandleCart} />} />
+            <Route
+              path="/products"
+              element={<MainProduct Add={HandleCart} />}
+            />
+            <Route
+              path="/Category/:id"
+              element={<FilterProduct Add={HandleCart} />}
+            />
             <Route
               path="/ShowProduct/:id"
               element={<ShowProduct Add={HandleCart} />}
             />
-            <Route path="/brands/:id" element={<BrandsProducts Add={HandleCart}/>} />
+            <Route
+              path="/brands/:id"
+              element={<BrandsProducts Add={HandleCart} />}
+            />
             <Route path="/gallery" element={<MainGallery />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/customer" element={<Customer />} />

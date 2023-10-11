@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import "./BrandsProducts.scss";
 import { motion } from "framer-motion";
 
-function BrandsProducts({Add}) {
+function BrandsProducts({ Add }) {
   const { id } = useParams();
   let Show = Data.filter((item) => item.Brands == id);
   let Title = Show.slice(0, 1);
@@ -46,7 +46,7 @@ function BrandsProducts({Add}) {
                     </Card.Title>
                   </NavLink>
                   <Card.Text className="price-card-products">
-                    {items.Price}
+                    ${items.Price}
                   </Card.Text>
                   <Card.Text className="star-card-products">
                     <i class="fa-sharp fa-solid fa-star"></i>
@@ -56,7 +56,14 @@ function BrandsProducts({Add}) {
                     <i class="fa-solid fa-star-half-stroke"></i>
                   </Card.Text>
 
-                  <Button className="add-products" onClick={() => {Add(items)}}>ADD TO CART</Button>
+                  <Button
+                    className="add-products"
+                    onClick={() => {
+                      Add(items);
+                    }}
+                  >
+                    ADD TO CART
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>

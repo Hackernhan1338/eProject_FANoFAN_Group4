@@ -63,7 +63,7 @@ function ShowProduct({ Add, ProductCart }) {
                 </div>
               </div>
               <Tabs
-                defaultActiveKey="profile"
+                defaultActiveKey="Spec"
                 id="justify-tab-example"
                 className="mb-3 "
                 justify

@@ -4,7 +4,7 @@ import Maincontent from "../../Components/Maincontent/Maincontent";
 import Slideshow from "../../Components/Sideshow/Slideshow";
 import { motion } from "framer-motion";
 
-function Homepage() {
+function Homepage({ Add }) {
   return (
     <motion.div
       className="homepage"
@@ -13,7 +13,7 @@ function Homepage() {
       exit={{ opacity: 0 }}
     >
       <Slideshow />
-      <Maincontent />
+      <Maincontent Add={Add} />
       <Footer />
     </motion.div>
   );
