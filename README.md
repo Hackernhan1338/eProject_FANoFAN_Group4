@@ -6,7 +6,7 @@
 
 <div  align="center">
 
-<img  src="https://drive.google.com/file/d/165orVlhW74ye9WEbxs4ObQugWoqqr3NK/view?usp=sharing"  alt="Logo"  width="768px"  height="auto">
+<img  src={[LOGO]}  alt="Logo"  width="768px"  height="auto">
 
 </a>
 
@@ -70,4 +70,5 @@ Trần Ngọc Trâm </t>Student1470107 (Leader)</br>
 [js]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
 [react]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[bootstrap]: https://cdn.freebiesupply.com/logos/large/2x/bootstrap-5-logo-png-transparent.png
+[bootstrap]: https://drive.google.com/file/d/1QJldNWK2La4Ozv2USj8DaODqd6zTnm4N/view?usp=sharing
+[logo]: https://drive.google.com/file/d/165orVlhW74ye9WEbxs4ObQugWoqqr3NK/view?usp=sharing
