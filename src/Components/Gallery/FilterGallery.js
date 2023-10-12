@@ -9,8 +9,8 @@ function FilterGallery({ Filterproduct }) {
     <Container>
       {Filterproduct.map((item, index) => (
         <Row>
-          <Col xs={12} sm={9} md={4} key={index}>
-            <Card className="mt-3 mb-3 shadow text-center">
+          <Col xs={12} sm={9} md={9} lg={4} key={index}>
+            <Card className="mt-3 mb-3 shadow text-center card-gallery">
               <CardImg
                 variant="left"
                 src={item.Img1}
@@ -19,6 +19,9 @@ function FilterGallery({ Filterproduct }) {
               />
               <Card.Body>
                 <Card.Title>{item.Name}</Card.Title>
+                <Card.Text className="gallery-card-price">
+                  ${item.Price}
+                </Card.Text>
                 <Link to={`/ShowProduct/${item.ID}`}>
                   <Button variant="primary" className="gallery-item-filter ">
                     Detail ...
@@ -27,8 +30,8 @@ function FilterGallery({ Filterproduct }) {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={12} sm={9} md={4} key={index}>
-            <Card className="mt-3 mb-3 shadow text-center">
+          <Col xs={12} sm={9} md={9} lg={4} key={index}>
+            <Card className="mt-3 mb-3 shadow text-center card-gallery">
               <CardImg
                 variant="left"
                 src={item.Img2}
@@ -37,6 +40,9 @@ function FilterGallery({ Filterproduct }) {
               />
               <Card.Body>
                 <Card.Title>{item.Name}</Card.Title>
+                <Card.Text className="gallery-card-price">
+                  ${item.Price}
+                </Card.Text>
                 <Link to={`/ShowProduct/${item.ID}`}>
                   <Button variant="primary" className="gallery-item-filter ">
                     Detail ...
@@ -45,8 +51,8 @@ function FilterGallery({ Filterproduct }) {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={12} sm={9} md={4} key={index}>
-            <Card className="mt-3 mb-3 shadow text-center">
+          <Col xs={12} sm={9} md={9} lg={4} key={index}>
+            <Card className="mt-3 mb-3 shadow text-center card-gallery">
               <CardImg
                 variant="left"
                 src={item.Img3}
@@ -55,6 +61,9 @@ function FilterGallery({ Filterproduct }) {
               />
               <Card.Body>
                 <Card.Title>{item.Name}</Card.Title>
+                <Card.Text className="gallery-card-price">
+                  ${item.Price}
+                </Card.Text>
                 <Link to={`/ShowProduct/${item.ID}`}>
                   <Button variant="primary" className="gallery-item-filter ">
                     Detail ...

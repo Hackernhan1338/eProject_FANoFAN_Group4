@@ -1,10 +1,15 @@
 .all-products-side {
-  background: linear-gradient(90deg, #1d67fd 35%, #29d2e1 62%);
+  background: #b5e9fb;
   width: 100%;
   height: 100px;
-  color: white;
+  color: black;
   margin-bottom: 20px;
   padding-top: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .bestseller-title {
@@ -57,7 +62,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: auto;
+  min-height: 500px;
   border: 3px solid #b5e9fb;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -96,7 +101,7 @@
   text-decoration: none;
 }
 .card-all-products .content-card-products .detail-link-card .title-card-products {
-  height: 50px;
+  height: 70px;
   transition: all 0.1s;
   color: black;
   -webkit-transition: all 0.1s;
@@ -112,6 +117,7 @@
   font-size: 25px;
   font-style: italic;
   font-weight: 600;
+  color: black;
 }
 .card-all-products .content-card-products .star-card-products {
   color: orange;
@@ -123,6 +129,7 @@
   border: transparent;
   font-weight: 700;
   transition: 0.2s;
+  margin-top: 20px;
   -webkit-transition: width 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;

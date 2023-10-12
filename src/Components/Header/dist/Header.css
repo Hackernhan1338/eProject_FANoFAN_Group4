@@ -32,22 +32,28 @@
   cursor: pointer;
   font-weight: bold;
 }
-.header .header-content .header-right-cart-login .header-login:hover {
-  color: #b5e9fb;
+.header .header-content .header-right-cart-login .header-login .link-login {
+  text-decoration: none;
+  color: black;
+}
+.header .header-content .header-right-cart-login .header-login .link-login:hover {
+  color: #0820d2;
 }
 .header .header-content .header-right-cart-login .header-cart {
   text-decoration: none;
   font-size: 30px;
   cursor: pointer;
 }
-.header .header-content .header-right-cart-login .header-cart:hover {
-  color: #b5e9fb;
-}
 .header .header-content .header-right-cart-login .header-cart .link-cart {
   color: black;
 }
 .header .header-content .header-right-cart-login .header-cart .link-cart:hover {
-  color: #b5e9fb;
+  color: #0820d2;
+}
+.header .header-content .header-right-cart-login .header-cart .SLCart {
+  font-size: small;
+  padding: 10px;
+  margin: 10px;
 }
 
 @media screen and (max-width: 1300px) {

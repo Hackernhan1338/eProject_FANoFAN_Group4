@@ -63,7 +63,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: auto;
+  min-height: 500px;
   border: 3px solid #b5e9fb;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -76,8 +76,8 @@
   transform: scale(1.05);
 }
 .card-products-categories .img-card-rpoducts {
-  width: auto;
-  height: 180px;
+  min-width: 200px;
+  height: 200px;
   object-fit: fill;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -102,7 +102,7 @@
   text-decoration: none;
 }
 .card-products-categories .content-card-products .detail-link-card .title-card-products {
-  height: 50px;
+  height: 70px;
   transition: all 0.1s;
   color: black;
   -webkit-transition: all 0.1s;
@@ -118,6 +118,7 @@
   font-size: 25px;
   font-style: italic;
   font-weight: 600;
+  color: black;
 }
 .card-products-categories .content-card-products .star-card-products {
   color: orange;
@@ -129,6 +130,7 @@
   border: transparent;
   font-weight: 700;
   transition: 0.2s;
+  margin-top: 20px;
   -webkit-transition: width 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;

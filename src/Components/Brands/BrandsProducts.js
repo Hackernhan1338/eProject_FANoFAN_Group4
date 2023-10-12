@@ -12,6 +12,7 @@ function BrandsProducts({ Add }) {
   const { id } = useParams();
   let Show = Data.filter((item) => item.Brands == id);
   let Title = Show.slice(0, 1);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,14 +29,19 @@ function BrandsProducts({ Add }) {
       <Container fluid="md">
         <Row>
           {Show.map((items, index) => (
-            <Col xs={12} sm={6} md={3} key={index}>
+            <Col xs={12} sm={6} md={6} lg={3} key={index}>
               <Card className="mt-3 mb-3 card-products-brands">
-                <Card.Img
-                  variant="top"
-                  src={items.Img1}
-                  alt={items.Name}
-                  className="img-card-rpoducts"
-                />
+                <NavLink
+                  to={`/ShowProduct/${items.ID}`}
+                  className=" detail-link-card"
+                >
+                  <Card.Img
+                    variant="top"
+                    src={items.Img1}
+                    alt={items.Name}
+                    className="img-card-rpoducts"
+                  />
+                </NavLink>
                 <Card.Body className="content-card-products">
                   <NavLink
                     to={`/ShowProduct/${items.ID}`}
@@ -44,22 +50,22 @@ function BrandsProducts({ Add }) {
                     <Card.Title className="title-card-products">
                       {items.Name1}
                     </Card.Title>
-                  </NavLink>
-                  <Card.Text className="price-card-products">
-                    ${items.Price}
-                  </Card.Text>
-                  <Card.Text className="star-card-products">
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-sharp fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                  </Card.Text>
 
+                    <Card.Text className="price-card-products">
+                      ${items.Price}
+                    </Card.Text>
+                    <Card.Text className="star-card-products">
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-sharp fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                    </Card.Text>
+                  </NavLink>
                   <Button
                     className="add-products"
                     onClick={() => {
-                      Add(items);
+                      Add(items, 1);
                     }}
                   >
                     ADD TO CART

@@ -10,6 +10,18 @@
         align-items: center;
         font-weight: 700;
         font-size: 20px;
+        .dropdown-item {
+            background-color: $background-color1;
+            color: $background-color2;
+            font-weight: 600;
+            &::after {
+                color: white;
+                background-color: $background-color2;
+            }
+            &:hover {
+                background-color: $background-color;
+            }
+        }
     }
 }
 @media screen and (max-width: 1400px) {

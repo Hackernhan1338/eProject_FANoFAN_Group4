@@ -3,6 +3,7 @@
 .featuredproducts-title {
     font-weight: bold;
     font-size: 50px;
+    text-transform: uppercase;
 }
 .card-products-featured {
     box-shadow:
@@ -12,7 +13,7 @@
     justify-content: center;
     align-items: center;
     width: auto;
-    height: auto;
+    min-height: 500px;
     border: 3px solid $background-color;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -89,6 +90,7 @@
             font-size: 25px;
             font-style: italic;
             font-weight: 600;
+            color: black;
         }
         .star-card-products {
             color: orange;
@@ -100,7 +102,7 @@
             border: transparent;
             font-weight: 700;
             transition: 0.2s;
-
+            margin-top: 20px;
             -webkit-transition: width 0.2s;
             -moz-transition: 0.2s;
             -ms-transition: 0.2s;

@@ -33,7 +33,6 @@
   width: 100%;
   height: 50px;
   padding-top: 15px;
-  justify-content: center;
   display: flex;
   align-items: center;
   color: black;
@@ -43,6 +42,16 @@
 }
 .search .DataResult .dataItem:hover {
   background-color: #b5e9fb;
+}
+.search .DataResult .search-bar-results {
+  display: flex;
+}
+.search .DataResult .search-bar-results .dataItem-img {
+  width: 30px;
+  height: 30px;
+  object-fit: fill;
+  margin-right: 15px;
+  margin-left: 10px;
 }
 
 #clearBtn {

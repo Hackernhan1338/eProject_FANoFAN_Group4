@@ -42,7 +42,11 @@ function SearchBar({ placeholder, data }) {
                 to={`/ShowProduct/${items.ID}`}
                 target="_blank"
               >
-                <p className="dataItem-text">{items.Name1}</p>
+                <div className="search-bar-results">
+                  <img className="dataItem-img" src={items.Img1} alt="" />
+                  <p className="dataItem-text">{items.Name1}</p>
+                  <hr />
+                </div>
               </NavLink>
             );
           })}

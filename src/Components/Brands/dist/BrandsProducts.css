@@ -9,25 +9,13 @@
   font-size: 50px;
 }
 
-.sort-price {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  margin-right: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.sort-price .sort-price__label {
-  margin-right: 30px;
-}
-
 .card-products-brands {
   box-shadow: 0 0 2px 2px #b5e9fb, 0 5px 5px #b5e9fb;
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
-  height: auto;
+  min-height: 500px;
   border: 3px solid #b5e9fb;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -82,6 +70,7 @@
   font-size: 25px;
   font-style: italic;
   font-weight: 600;
+  color: black;
 }
 .card-products-brands .content-card-products .star-card-products {
   color: orange;
@@ -93,6 +82,7 @@
   border: transparent;
   font-weight: 700;
   transition: 0.2s;
+  margin-top: 20px;
   -webkit-transition: width 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;

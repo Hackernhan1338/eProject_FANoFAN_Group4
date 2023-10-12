@@ -1,6 +1,6 @@
 import "./Footer.scss";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "./img-Footer/Logo-footer.png";
 
 function Footer() {
@@ -15,20 +15,42 @@ function Footer() {
         </div>
         <div className="footer-address-email">
           <div className="footer-email">
-            <i class="fa-solid fa-envelope"></i> fanofan@gmail.com
+            <i class="fa-solid fa-envelope"></i> fanofan@gmail.com{" "}
           </div>
           <div className="footer-address">
-            <i class="fa-solid fa-location-dot"></i> 590 Cach Mang Thang Tam,
-            Q3, TPHCM
+            <Link
+              className="link-footer"
+              to="https://maps.app.goo.gl/tubPufyUWp1E73jTA"
+            >
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 590 Cach Mang Thang
+                Tam, Q3, TPHCM
+              </p>
+            </Link>
           </div>
         </div>
 
         <div className="footer-social">
           <div className="footer-follow">Follow us:</div>
           <div className="footer-social-icon">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i>
+            <Link
+              className="link-footer"
+              to="https://www.facebook.com/profile.php?id=100031709886303"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </Link>
+            <Link
+              className="link-footer"
+              to="https://www.instagram.com/tramell_a1/"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </Link>
+            <Link
+              className="link-footer"
+              to="https://www.youtube.com/watch?v=CJfWGJ3VHh8"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </Link>
           </div>
         </div>
         <div className="footer-about">
@@ -36,13 +58,19 @@ function Footer() {
           <div>
             <ul>
               <li className="footer-about-list">
-                <Link className="footer-about-link">About us</Link>
+                <Link className="footer-about-link" to="/aboutus">
+                  About us
+                </Link>
               </li>
               <li className="footer-about-list">
-                <Link className="footer-about-link">Contact us</Link>
+                <Link className="footer-about-link" to="/contact">
+                  Contact us
+                </Link>
               </li>
               <li className="footer-about-list">
-                <Link className="footer-about-link">All items</Link>
+                <Link className="footer-about-link" to="/products">
+                  All items
+                </Link>
               </li>
               <li className="footer-about-list">
                 <Link className="footer-about-link">Privacy policy</Link>
@@ -64,10 +92,14 @@ function Footer() {
                 <Link className="footer-customer-link">Wishlist</Link>
               </li>
               <li className="footer-customer-list">
-                <Link className="footer-customer-link">ShoppingCart</Link>
+                <Link className="footer-customer-link" to="/Cart">
+                  ShoppingCart
+                </Link>
               </li>
               <li className="footer-customer-list">
-                <Link className="footer-customer-link">Customer Service</Link>
+                <Link to="/customer" className="footer-customer-link">
+                  Customer Service
+                </Link>
               </li>
             </ul>
           </div>

@@ -687,7 +687,7 @@
     {
         "ID" : 21,
         "Name" : "Amazon Basics Air Fan",
-        "Name1" : "Amazon Basics Air Fan",
+        "Name1" : "Amazon Air Fan",
         "Price" : 29.9,
         "Rate" : "4.6 with 987 ratings",
         "Img1" : "/Img/Picture61.png",
@@ -1137,7 +1137,7 @@
     {
         "ID" : 34,
         "Name" : "HealSmart Medium size portable bladeless fan",
-        "Name1" : "HealSmart bladeless fan",
+        "Name1" : "HealSmart Bladeless",
         "Price" : 85.99,
         "Rate" : "3.4",
         "Img1" : "/Img/Bladeless_4.1.png",
@@ -1377,7 +1377,7 @@
     {
         "ID" : 41,
         "Name" : "Amazon Basics Pedestal Fan",
-        "Name1" : "Amazon Basics Pedestal Fan",
+        "Name1" : "Amazon Pedestal Fan",
         "Price" : 47.76,
         "Rate" : "4.6",
         "Img1" : "/Img/Pedestal_fan_1.1.png",
@@ -1720,7 +1720,7 @@
     {
         "ID" : 51,
         "Name" : "Amazon Basics Manual Tower Fan",
-        "Name1" : "Amazon Basics Tower Fan",
+        "Name1" : "Amazon Tower Fan",
         "Price" : 49.87,
         "Rate" : "3.8",
         "Img1" : "/Img/Tower_fan_9.1.png",
@@ -2067,7 +2067,7 @@
     {
         "ID" : 61,
         "Name" : "Amazon Basics Air Fan",
-        "Name1" : "Amazon Basics Air Fan",
+        "Name1" : "Amazon Air Fan",
         "Price" : 29.9,
         "Rate" : "4.6 with 987 ratings",
         "Img1" : "/Img/Picture19.png",

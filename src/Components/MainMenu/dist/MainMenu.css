@@ -11,6 +11,18 @@
   font-weight: 700;
   font-size: 20px;
 }
+.mainmenu .mainmenu-content .dropdown-item {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+}
+.mainmenu .mainmenu-content .dropdown-item::after {
+  color: white;
+  background-color: black;
+}
+.mainmenu .mainmenu-content .dropdown-item:hover {
+  background-color: #b5e9fb;
+}
 
 @media screen and (max-width: 1400px) {
   .mainmenu-content {

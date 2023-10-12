@@ -13,7 +13,7 @@ function Maincontent({ Add }) {
       <Container fluid>
         <BestSeller Add={Add} />
         <Ad2 />
-        <FeaturedProducts />
+        <FeaturedProducts Add={Add} />
         <Ad1 />
         <Priority />
         <TopBrands />

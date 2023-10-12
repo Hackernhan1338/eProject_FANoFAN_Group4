@@ -22,6 +22,16 @@
   color: aliceblue;
 }
 
+.slideshow-img-details {
+  width: auto;
+  height: 350px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
 .Img {
   width: auto;
   height: 250px;
@@ -89,10 +99,17 @@
   color: orange;
 }
 
+.tab-details-products {
+  color: black;
+  font-weight: 600;
+}
+.tab-details-products:active {
+  background-color: #d4f0f0;
+}
+
 .Spec {
   font-size: 20px;
-  float: left;
-  text-align: left;
+  width: 100%;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 5px 30px 5px 20px;
 }
@@ -103,6 +120,7 @@
 
 .Type {
   color: black;
+  width: 100%;
   font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 10px 50px 10px 150px;
@@ -124,14 +142,14 @@
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   font-weight: bold;
-  transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  -ms-transition: all 0.25s;
-  -o-transition: all 0.25s;
+  transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
 }
 .buttonAdd:hover {
-  width: 210px;
+  width: 220px;
   background-color: black;
   color: #b5e9fb;
   font-size: 20px;

@@ -1,32 +1,123 @@
-import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Product from "../Data.json";
-
 import "./Cart.scss";
+import { useContext, useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+
+import Quantity from "./Quantity";
+import CartContext from "../Context/CartContext";
+
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 function Cart({ CartData }) {
-  const [Data, setData] = useState(CartData);
+  const { cart, HandleQuantity, ProQuantity, setProQuantity } = useContext(
+    CartContext
+  );
+  const [Data, setData] = useState(cart);
+  const [CartTotal, setCartTotal] = useState(0);
+  useEffect(() => {
+    let total = 0;
+    Data.forEach((x) => {
+      total += x.Data.Price * x.quantity;
+    });
+    setCartTotal(total.toFixed(2));
+  });
+
+  const HandleDelete = (Id) => {
+    const NewCart = Data.filter((x) => x.Data.ID !== Id);
+    setData(NewCart);
+  };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div>
       <Container className="mt-5">
         <table id="customers">
           <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Money</th>
+            <th className="text-center">Name</th>
+            <th className="text-center">Price</th>
+            <th className="text-center">Quantity</th>
+            <th className="text-center">Money</th>
           </tr>
           {Data.map((item, index) => (
             <tr>
-              <td key={index}>{item[0].Name}</td>
-              <td key={index}>${item[0].Price}</td>
-              <td key={index}>1</td>
-              <td key={index}>${item[0].Price}</td>
+              <td key={index}>{item.Data.Name}</td>
+              <td key={index} className="text-center">
+                ${item.Data.Price}
+              </td>
+              <td key={index} className="text-center">
+                <Quantity
+                  cart={cart}
+                  quantity={ProQuantity}
+                  setQuantity={setProQuantity}
+                  MainCart={true}
+                  HandleQuantity={HandleQuantity}
+                  Id={item.Data.ID}
+                />
+              </td>
+              <td key={index} className="text-center">
+                ${item.Data.Price * item.quantity}
+              </td>
+              <div key={index}>
+                <Button
+                  variant="danger"
+                  className="ms-2 mt-2"
+                  onClick={() => {
+                    HandleDelete(item.Data.ID);
+                  }}
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </Button>
+              </div>
             </tr>
           ))}
         </table>
+        <div className="cart-total-pay">
+          <p className="cart-total">Total (USD): ${CartTotal}</p>
+          <Button onClick={handleShow} className="cart-pay">
+            Pay Now
+          </Button>
+        </div>
       </Container>
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div>
+            <h4 className="text-center">Thank You For Buying Our Product</h4>
+          </div>
+          {/* <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Example textarea</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form> */}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          {/* <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button> */}
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

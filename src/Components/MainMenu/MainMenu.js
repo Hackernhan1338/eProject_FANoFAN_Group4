@@ -26,7 +26,7 @@ function MainMenu() {
                   PRODUCTS
                 </Nav.Link>
                 <NavDropdown
-                  title="CATEGORY"
+                  title="CATEGORIES"
                   id="basic-nav-dropdown"
                   className="mainmenu-item"
                 >
@@ -42,7 +42,11 @@ function MainMenu() {
                   className="mainmenu-item"
                 >
                   {Brands.map((items, index) => (
-                    <NavDropdown.Item href={`/brands/${items.id}`} key={index}>
+                    <NavDropdown.Item
+                      href={`/brands/${items.id}`}
+                      key={index}
+                      bsPrefix="dropdown-item"
+                    >
                       {items.Name}
                     </NavDropdown.Item>
                   ))}

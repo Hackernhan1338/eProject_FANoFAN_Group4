@@ -9,7 +9,13 @@
 
     color: $text-color1;
     font-size: 18px;
-
+    .link-footer {
+        text-decoration: none;
+        color: $background-color2;
+        &:hover {
+            color: $text-color4;
+        }
+    }
     .footer-top {
         margin-bottom: 30px;
         font-size: 20px;

@@ -6,7 +6,7 @@ import { useState } from "react";
 import Data from "../Data.json";
 import SearchBar from "../SearchBar/SearchBar";
 
-function Header() {
+function Header({ CartCount }) {
   return (
     <Container fluid="md">
       <div className="header">
@@ -20,12 +20,17 @@ function Header() {
           </div>
 
           <div className="header-right-cart-login">
-            <div className="header-login">Log in</div>
+            <div className="header-login">
+              <Link className="link-login" to={`/login`}>
+                Log in
+              </Link>
+            </div>
             <div className="header-cart">
               <Link to={`/Cart`} className="link-cart">
                 <i class="fa-solid fa-cart-shopping "></i>
               </Link>
             </div>
+            <div className="SLCart">{CartCount}</div>
           </div>
         </div>
       </div>

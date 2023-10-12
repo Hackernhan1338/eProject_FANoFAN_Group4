@@ -14,22 +14,41 @@
   color: #b5e9fb;
 }
 
+.card-gallery {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  min-height: 450px;
+}
+.card-gallery .gallery-card-price {
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .Img {
   width: auto;
-  height: 250px;
-  object-fit: fill;
+  height: 350px;
+  object-fit: cover;
   flex: auto;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 .MainImg {
   width: auto;
-  height: 300px;
+  height: 350px;
   margin: 10px;
 }
 
 .OtherImg {
   width: auto;
-  height: 150px;
+  height: 350px;
   float: left;
   margin: 10px;
 }

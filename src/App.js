@@ -15,25 +15,47 @@ import MainProduct from "./Components/Products/MainProduct";
 import FilterProduct from "./Components/Categories/FilterProduct";
 import MainMenu from "./Components/MainMenu/MainMenu";
 import MainGallery from "./Components/Gallery/MainGallery";
-
 import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Cart from "./Components/Cart/Cart";
-import Product from "./Components/Data.json";
-import { Row, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
-const ProductCart = [];
+import CartContext from "./Components/Context/CartContext";
+import Login from "./Components/Login/Login";
 
 function App() {
   const location = useLocation();
-  const HandleCart = (Data) => {
-    const AddData = Product.filter((x) => x.ID === Data.ID);
-    ProductCart.push(AddData);
+  const [cart, setCart] = useState([]);
+  const [ProQuantity, setProQuantity] = useState(1);
+
+  const HandleCart = (Data, quantity) => {
+    setCart([
+      ...cart,
+      {
+        Data,
+        quantity,
+      },
+    ]);
   };
+  const HandleQuantity = (icon, id) => {
+    const updateCart = [...cart];
+    const ProIndex = updateCart.findIndex((x) => x.Data.ID === id);
+    if (icon === "Minus") {
+      if (updateCart[ProIndex].quantity >= 1) {
+        updateCart[ProIndex].quantity -= 1;
+        setCart(updateCart);
+      } else {
+        updateCart[ProIndex].quantity = 0;
+        setCart(updateCart);
+      }
+    } else if (icon === "Plus") {
+      updateCart[ProIndex].quantity += 1;
+      setCart(updateCart);
+    }
+  };
+
   return (
     <div className="App">
       <div className="sec1">
-        <Header />
+        <Header CartCount={cart.length} />
       </div>
       <div>
         <MainMenu />
@@ -50,10 +72,7 @@ function App() {
               path="/Category/:id"
               element={<FilterProduct Add={HandleCart} />}
             />
-            <Route
-              path="/ShowProduct/:id"
-              element={<ShowProduct Add={HandleCart} />}
-            />
+
             <Route
               path="/brands/:id"
               element={<BrandsProducts Add={HandleCart} />}
@@ -63,14 +82,23 @@ function App() {
             <Route path="/customer" element={<Customer />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
 
-          <Routes>
-            <Route
-              path="/Cart"
-              element={<Cart Add={HandleCart} CartData={ProductCart} />}
-            />
-          </Routes>
+          <CartContext.Provider
+            value={{
+              cart,
+              HandleCart,
+              HandleQuantity,
+              ProQuantity,
+              setProQuantity,
+            }}
+          >
+            <Routes>
+              <Route path="/ShowProduct/:id" element={<ShowProduct />} />
+              <Route path="/Cart" element={<Cart />} />
+            </Routes>
+          </CartContext.Provider>
         </AnimatePresence>
       </div>
     </div>
