@@ -6,7 +6,7 @@
 
 <div  align="center">
 
-<img  src="../fanofan/src/Components/Header/imgHeader/LOGO1.png"  alt="Logo"  width="768px"  height="auto">
+<img  src="https://drive.google.com/file/d/165orVlhW74ye9WEbxs4ObQugWoqqr3NK/view?usp=sharing"  alt="Logo"  width="768px"  height="auto">
 
 </a>
 
@@ -63,11 +63,11 @@ The advertise section with various facilities provided should be mentioned.</br>
 
 Võ Nguyễn Thiên Ân </t>Student1470284 </br>
 Nguyễn Thành Nghĩa </t>Student1477169</br>
-Trần Ngọc Trâm </t>Student1470107</br>
+Trần Ngọc Trâm </t>Student1470107 (Leader)</br>
 
 [html]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [css3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [js]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
 [react]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[bootstrap]: https://cdn.iconscout.com/icon/free/png-512/free-bootstrap-6-1175203.png?f=webp&w=256
+[bootstrap]: https://cdn.freebiesupply.com/logos/large/2x/bootstrap-5-logo-png-transparent.png
