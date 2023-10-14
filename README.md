@@ -6,14 +6,19 @@
 
 <div  align="center">
 
-<img  src={[LOGO]}  alt="Logo"  width="768px"  height="auto">
+<img src="/public/LOGO2.png" alt="logo" width="768px"  height="auto"></img>
 
 </a>
-
-<h3  align="center">FANoFAN</h3>
+<h3 align="center">eProject FANoFAN</h3>
+<hr/>
 
 FANoFAN Company is into manufacturing and selling on Fans. They manufacture fans for various needs of customers. From Ceiling Fans to Table Fans to Exhaust Fans, they are into all types of Fan Manufacturing.
 They are looking to come up with their own website and display all the products available with them. They want to provide a detailed information about all their products.
+
+<p>Some interfaces:</p>
+<div align="center">
+  <img src="/public/web_overview.png" alt="web-overview"></img>
+</div>
 
   <br  />
   <a  href="https://github.com/Tramella/eProject_FANoFAN_Group4/tree/master/REVIEW"><strong>Explore the documentation »</strong></a>
@@ -24,7 +29,9 @@ They are looking to come up with their own website and display all the products 
 
 Below is the languages/libraries we used for this project:
 
-![HTML]&nbsp;![CSS3] &nbsp;![JS]&nbsp;![SASS]&nbsp;![REACT]&nbsp;![BOOTSTRAP]
+<div align="center">
+  <img src="/public/group_component.png" alt="group-component"></img>
+</div>
 
 <div  align="left">
   
@@ -64,11 +71,3 @@ The advertise section with various facilities provided should be mentioned.</br>
 Võ Nguyễn Thiên Ân </t>Student1470284 </br>
 Nguyễn Thành Nghĩa </t>Student1477169</br>
 Trần Ngọc Trâm </t>Student1470107 (Leader)</br>
-
-[html]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[css3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
-[js]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
-[react]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[bootstrap]: https://drive.google.com/file/d/1QJldNWK2La4Ozv2USj8DaODqd6zTnm4N/view?usp=sharing
-[logo]: https://drive.google.com/file/d/165orVlhW74ye9WEbxs4ObQugWoqqr3NK/view?usp=sharing

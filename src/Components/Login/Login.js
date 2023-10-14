@@ -60,7 +60,7 @@ function Login({ Validation }) {
                 <p style={{ color: "red", fontSize: "13px" }}>{errors.name}</p>
               )}
             </div>
-            <div className="content-user mt-3">
+            <div className="content-user mt-2">
               <label className=" label-content">Password</label>
               <input
                 type="pasword"
