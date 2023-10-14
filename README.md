@@ -68,6 +68,6 @@ The advertise section with various facilities provided should be mentioned.</br>
 
 ## Members of group
 
-Võ Nguyễn Thiên Ân </t>Student1470284 </br>
-Nguyễn Thành Nghĩa </t>Student1477169</br>
-Trần Ngọc Trâm </t>Student1470107 (Leader)</br>
+Võ Nguyễn Thiên Ân - Student1470284 </br>
+Nguyễn Thành Nghĩa - Student1477169</br>
+Trần Ngọc Trâm - Student1470107 (Leader)</br>
