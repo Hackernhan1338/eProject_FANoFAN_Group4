@@ -76,7 +76,7 @@
   transform: scale(1.05);
 }
 .card-products-categories .img-card-rpoducts {
-  min-width: 200px;
+  width: auto;
   height: 200px;
   object-fit: fill;
   border-radius: 10px;

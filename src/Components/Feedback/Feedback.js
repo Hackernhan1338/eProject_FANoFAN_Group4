@@ -214,7 +214,7 @@ function ProductFeedback() {
             ratingError={ratingError}
           />
         ) : page === 2 ? (
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className="text-center">
             <Form.Group controlId="feedback">
               <Form.Label>Your review and comments</Form.Label>
               <Form.Control
@@ -223,6 +223,7 @@ function ProductFeedback() {
                 rows={4}
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
+                className="page2-feedback"
               />
             </Form.Group>
             {ratingError && <p style={{ color: "red" }}>Required</p>}

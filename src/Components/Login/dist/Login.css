@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-form {
+.form-login {
   width: 50%;
   border: 3px solid white;
 }
@@ -16,6 +16,7 @@ input[type=password] {
   display: inline-block;
   border: 1px solid lightgray;
   box-sizing: border-box;
+  font-size: 20px;
 }
 
 .button1 {
@@ -26,6 +27,11 @@ input[type=password] {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .button1:hover {
   opacity: 0.8;
@@ -48,6 +54,11 @@ input[type=password] {
   float: left;
   margin-left: 20px;
   border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .pass {
@@ -98,5 +109,9 @@ input[type=password] {
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.login-input:valid {
   border: 2px solid black;
 }

@@ -6,7 +6,7 @@
 
 <div  align="center">
 
-<img src="/public/LOGO2.png" alt="logo" width="768px"  height="auto"></img>
+<img src="/public/LOGO2.png" alt="logo" width="600px"  height="auto"></img>
 
 </a>
 <h3 align="center">eProject FANoFAN</h3>

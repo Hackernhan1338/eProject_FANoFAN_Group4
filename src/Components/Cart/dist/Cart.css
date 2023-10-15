@@ -23,6 +23,21 @@
   color: white;
 }
 
+.content-modal {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-sucess {
+  color: #15c263;
+  font-size: 80px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
 .Delete-Icon {
   width: 20px;
   height: 25px;

@@ -20,7 +20,7 @@
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  min-height: 450px;
+  min-height: 400px;
 }
 .card-gallery .gallery-card-price {
   font-size: 25px;
@@ -28,29 +28,15 @@
   font-weight: 600;
 }
 
-.Img {
+.Img-gallery {
   width: auto;
-  height: 350px;
-  object-fit: cover;
-  flex: auto;
+  height: 300px;
+  object-fit: fill;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-}
-
-.MainImg {
-  width: auto;
-  height: 350px;
-  margin: 10px;
-}
-
-.OtherImg {
-  width: auto;
-  height: 350px;
-  float: left;
-  margin: 10px;
 }
 
 .Title {
@@ -63,16 +49,6 @@
   font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 10px 120px 10px 120px;
-}
-
-.Price {
-  color: brown;
-  text-shadow: 2px 2px 2px #6b6c5f;
-  text-align: center;
-  font-size: 30px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  padding: 0px 120px 10px 380px;
-  margin: 10px;
 }
 
 .Rate {

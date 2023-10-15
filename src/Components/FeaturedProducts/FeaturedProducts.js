@@ -5,13 +5,33 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function FeaturedProducts({ Add }) {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
+
+  const notify = () =>
+    toast.success("Product successfully added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const { id } = useParams();
   let Detail = Products.filter((x) => x.ID == id);
   Detail = Detail[0];
   return (
-    <Container fluid="md">
+    <Container fluid="md" data-aos="fade-up">
       <Row className="text-center mt-5 mb-3">
         <h1 className="featuredproducts-title">Featured Products</h1>
       </Row>
@@ -34,6 +54,7 @@ function FeaturedProducts({ Add }) {
                   src={items.Img1}
                   alt={items.Name}
                   className="img-card-rpoducts"
+                  data-aos="zoom-in"
                 />
               </NavLink>
               <Card.Body className="content-card-products">
@@ -56,7 +77,10 @@ function FeaturedProducts({ Add }) {
                     <i class="fa-solid fa-star-half-stroke"></i>
                   </Card.Text>
                 </NavLink>
-                <Button className="add-products" onClick={() => Add(items, 1)}>
+                <Button
+                  className="add-products"
+                  onClick={() => notify(Add(items, 1))}
+                >
                   ADD TO CART
                 </Button>
               </Card.Body>

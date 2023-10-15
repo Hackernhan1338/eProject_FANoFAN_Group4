@@ -4,10 +4,16 @@ import slide2 from "./imageSlideShow/Slide2.1.png";
 import slide3 from "./imageSlideShow/Slide1.1.png";
 import Carousel from "react-bootstrap/Carousel";
 import { Button } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Slideshow() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <div className="slideshow">
+    <div className="slideshow" data-aos="fade-up">
       <Carousel>
         <Carousel.Item>
           <img className="slideshow-img" src={slide1} alt="slide1" />

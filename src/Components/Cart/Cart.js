@@ -83,13 +83,15 @@ function Cart({ CartData }) {
           </Button>
         </div>
       </Container>
-      <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
+      <Modal show={show} onHide={handleClose} centered className="modal-cart">
         <Modal.Body>
           <div>
-            <h4 className="text-center">Thank You For Buying Our Product</h4>
+            <h4 className="text-center content-modal">
+              Thank You For Buying Our Product
+              <span className="icon-sucess">
+                <i class="fa-regular fa-circle-check"></i>
+              </span>
+            </h4>
           </div>
           {/* <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -110,7 +112,7 @@ function Cart({ CartData }) {
           </Form> */}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="dark" onClick={handleClose}>
             Close
           </Button>
           {/* <Button variant="primary" onClick={handleClose}>

@@ -12,8 +12,15 @@ import PhoneInput from "react-phone-number-input";
 import { Card } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function ContactUs() {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
+
   const [phoneNumber, setPhoneNumber] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -58,13 +65,13 @@ function ContactUs() {
       exit={{ opacity: 0 }}
     >
       <Container fluid="md" className="text-center">
-        <Row className="text-center mt-5 ">
+        <Row className="text-center mt-5 " data-aos="fade-right">
           <h2 className="fw-bold">Please Give Us Your Information</h2>
         </Row>
         <Row className="mt-5 mb-4">
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} data-aos="fade-up">
             <Card className="custom-frame">
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleSubmit} data-aos="zoom-in">
                 <Row>
                   <Col md={6}>
                     <Form.Group
@@ -185,7 +192,7 @@ function ContactUs() {
               </Form>
             </Card>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} data-aos="fade-up">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.610010537023!2d106.80730807438925!3d10.841127589311595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752731176b07b1%3A0xb752b24b379bae5e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBGUFQgVFAuIEhDTQ!5e0!3m2!1svi!2s!4v1695003389929!5m2!1svi!2s"
               width="100%"

@@ -28,6 +28,20 @@
     background-color: $background-color2;
     color: $text-color3;
 }
+
+.content-modal {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon-sucess {
+    color: rgb(21, 194, 99);
+    font-size: 80px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
 .Delete-Icon {
     width: 20px;
     height: 25px;

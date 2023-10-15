@@ -10,8 +10,28 @@ import _ from "lodash";
 import "./FilterProducts.scss";
 import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function FilterProduct({ Add }) {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
+
+  const notify = () =>
+    toast.success("Product successfully added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const { id } = useParams();
   let Show = Data.filter((item) => item.Spec.Efd.Id == id);
   let Title = Show.slice(0, 1);
@@ -51,7 +71,7 @@ function FilterProduct({ Add }) {
       exit={{ opacity: 0 }}
     >
       <Container>
-        <Row>
+        <Row data-aos="fade-left">
           {Title.map((item, index) => (
             <div className="mt-3 categories-title" key={index}>
               {item.Spec.Efd.Name}
@@ -64,6 +84,7 @@ function FilterProduct({ Add }) {
           className="Sort"
           onChange={HandleSort}
           value={sort.by}
+          data-aos="fade-right"
         >
           <option className="option" value="default">
             Sort By
@@ -81,6 +102,7 @@ function FilterProduct({ Add }) {
           className="Sort"
           onChange={HandleSort}
           value={sort.order}
+          data-aos="fade-right"
         >
           <option className="option" value="asc">
             Ascending
@@ -92,7 +114,10 @@ function FilterProduct({ Add }) {
         <Row>
           {PageData.map((items, index) => (
             <Col xs={12} sm={6} md={6} lg={3} key={index}>
-              <Card className="mt-3 mb-3 card-products-categories">
+              <Card
+                className="mt-3 mb-3 card-products-categories"
+                data-aos="fade-up"
+              >
                 <NavLink
                   to={`/ShowProduct/${items.ID}`}
                   className=" detail-link-card"
@@ -102,7 +127,8 @@ function FilterProduct({ Add }) {
                     src={items.Img1}
                     alt={items.Name}
                     className="img-card-rpoducts"
-                  />{" "}
+                    data-aos="zoom-in"
+                  />
                 </NavLink>
                 <Card.Body className="content-card-products">
                   <NavLink
@@ -127,7 +153,7 @@ function FilterProduct({ Add }) {
                   <Button
                     className="add-products"
                     onClick={() => {
-                      Add(items, 1);
+                      notify(Add(items, 1));
                     }}
                   >
                     ADD TO CART
@@ -136,6 +162,18 @@ function FilterProduct({ Add }) {
               </Card>
             </Col>
           ))}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </Row>
         <Row>
           <MainPagination PageCount={PageCount} HandlePage={HandlePage} />

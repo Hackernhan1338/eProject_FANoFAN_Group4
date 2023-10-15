@@ -6,8 +6,14 @@ import Vision from "./img-aboutus/vision.png";
 import Product from "./img-aboutus/product.png";
 import "./AboutUs.scss";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function AboutUs() {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
   return (
     <motion.div
       className="aboutus"
@@ -17,10 +23,10 @@ function AboutUs() {
     >
       <Container fluid="lg">
         <div className="aboutus-content">
-          <div className="aboutus-title">
+          <div className="aboutus-title" data-aos="fade-right">
             <h1>FANoFAN - Your Choice For Your Home</h1>
           </div>
-          <div className="aboutus-company">
+          <div className="aboutus-company" data-aos="fade-up">
             <p className="aboutus-company-infor">
               FANoFAN is a leading company in the fan industry, specializing in
               the production and distribution of high-quality fans. With a wide
@@ -32,12 +38,12 @@ function AboutUs() {
               efficiency, ensuring the utmost comfort and satisfaction for our
               valued customers.
             </p>
-            <div className="aboutus-img-company">
+            <div className="aboutus-img-company" data-aos="zoom-in">
               <img className="img-company" src={Company} alt="company" />
             </div>
           </div>
-          <div className="aboutus-fouder">
-            <div className="aboutus-img-ceo">
+          <div className="aboutus-fouder" data-aos="fade-up">
+            <div className="aboutus-img-ceo" data-aos="fade-right">
               <img className="img-ceo" src={CEO} alt="ceo" />
             </div>
             <p className="aboutus-ceo-infor">
@@ -51,7 +57,7 @@ function AboutUs() {
               and customer-centric approach.
             </p>
           </div>
-          <div className="aboutus-product-featured">
+          <div className="aboutus-product-featured" data-aos="fade-up">
             <p className="aboutus-product-infor">
               Good Products At FANoFAN, we take great pride in offering a
               diverse range of top-notch fans. Our table fans are designed with
@@ -63,12 +69,12 @@ function AboutUs() {
               and style. With FANoFAN, you can trust that you're getting
               high-quality fans that are built to last.
             </p>
-            <div className="aboutus-img-product">
+            <div className="aboutus-img-product" data-aos="fade-left">
               <img className="img-product" src={Product} alt="product" />
             </div>
           </div>
-          <div className="aboutus-vision">
-            <div className="aboutus-img-vision">
+          <div className="aboutus-vision" data-aos="fade-up">
+            <div className="aboutus-img-vision" data-aos="fade-right">
               <img className="img-vision" src={Vision} alt="vision" />
             </div>
             <p className="aboutus-vision-infor">
@@ -83,7 +89,7 @@ function AboutUs() {
               with quality and reliability.
             </p>
           </div>
-          <div className="aboutus-contact">
+          <div className="aboutus-contact" data-aos="fade-up">
             Contact Information For more information about our products and
             services, or to place an order, please reach out to us at the
             following contact details:

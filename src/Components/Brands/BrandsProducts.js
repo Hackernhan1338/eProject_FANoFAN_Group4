@@ -7,11 +7,32 @@ import { NavLink } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import "./BrandsProducts.scss";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function BrandsProducts({ Add }) {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
+
   const { id } = useParams();
   let Show = Data.filter((item) => item.Brands == id);
   let Title = Show.slice(0, 1);
+
+  const notify = () =>
+    toast.success("Product successfully added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   return (
     <motion.div
@@ -21,7 +42,7 @@ function BrandsProducts({ Add }) {
     >
       <div className="mt-4 mb-3 text-center">
         {Title.map((item, index) => (
-          <div key={index} className="fw-bold">
+          <div key={index} className="fw-bold" data-aos="fade-right">
             <img className="img-brands" src={item.imgBrands} alt="" />
           </div>
         ))}
@@ -30,7 +51,10 @@ function BrandsProducts({ Add }) {
         <Row>
           {Show.map((items, index) => (
             <Col xs={12} sm={6} md={6} lg={3} key={index}>
-              <Card className="mt-3 mb-3 card-products-brands">
+              <Card
+                className="mt-3 mb-3 card-products-brands"
+                data-aos="fade-up"
+              >
                 <NavLink
                   to={`/ShowProduct/${items.ID}`}
                   className=" detail-link-card"
@@ -40,6 +64,7 @@ function BrandsProducts({ Add }) {
                     src={items.Img1}
                     alt={items.Name}
                     className="img-card-rpoducts"
+                    data-aos="zoom-in"
                   />
                 </NavLink>
                 <Card.Body className="content-card-products">
@@ -65,7 +90,7 @@ function BrandsProducts({ Add }) {
                   <Button
                     className="add-products"
                     onClick={() => {
-                      Add(items, 1);
+                      notify(Add(items, 1));
                     }}
                   >
                     ADD TO CART
@@ -74,6 +99,18 @@ function BrandsProducts({ Add }) {
               </Card>
             </Col>
           ))}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </Row>
       </Container>
       <Footer />

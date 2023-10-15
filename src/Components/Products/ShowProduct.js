@@ -9,10 +9,24 @@ import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import CartContext from "../Context/CartContext";
 import Quantity from "../Cart/Quantity";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Carousel from "react-bootstrap/Carousel";
 
 function ShowProduct({ Add, ProductCart }) {
+  const notify = () =>
+    toast.success("Product successfully added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const { id } = useParams();
   let Detail = Product.filter((x) => x.ID == id);
   Detail = Detail[0];
@@ -77,7 +91,7 @@ function ShowProduct({ Add, ProductCart }) {
                 <div className="button-add-cart">
                   <Button
                     className="buttonAdd text-center"
-                    onClick={() => HandleCart(Detail, 1)}
+                    onClick={() => notify(HandleCart(Detail, 1))}
                   >
                     ADD TO CART
                   </Button>
@@ -205,6 +219,18 @@ function ShowProduct({ Add, ProductCart }) {
             Add to Cart
           </Button> */}
         </main>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </Container>
       <Footer />
     </div>

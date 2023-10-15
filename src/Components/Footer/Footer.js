@@ -1,12 +1,19 @@
 import "./Footer.scss";
-
+import ScrollToTop from "react-scroll-to-top";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./img-Footer/Logo-footer.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Footer() {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
   return (
     <div className="footer">
-      <div className="footer-top">
+      <ScrollToTop smooth top="50" className="scrolling-to-top" />;
+      <div className="footer-top" data-aos="fade-down">
         <div className="footer-logo-phone">
           <img className="footer-logo" src={Logo} alt="logo" />
           <div className="footer-phone">
@@ -105,7 +112,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
       <div className="footer-final">
         <div className="text-hr">
           <hr />

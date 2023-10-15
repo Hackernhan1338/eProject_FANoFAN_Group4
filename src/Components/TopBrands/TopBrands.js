@@ -4,11 +4,17 @@ import amazon from "./img-topbrands/Amazon-Logo.png";
 import dreo from "./img-topbrands/Dreo-logo.png";
 import lasko from "./img-topbrands/Lasko.png";
 import levoit from "./img-topbrands/Levoit-logo.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function TopBrands() {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
   return (
     <div>
-      <Container fluid="lg">
+      <Container fluid="lg" data-aos="fade-up">
         <div class="container-fluid mb-5">
           <div class="text-center mt-5 mb-5">
             <h1 className="topbrands-title">Our Brands</h1>

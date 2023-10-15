@@ -10,8 +10,28 @@ import _ from "lodash";
 import "./MainProducts.scss";
 import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function MainProduct({ Add }) {
+  useEffect(() => {
+    AOS.init({ duration: 1700 });
+  }, []);
+
+  const notify = () =>
+    toast.success("Product successfully added", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   let RandomProduct = [];
   let RandomNumber = [];
   //const [PageData,setPageData] = useState();
@@ -69,7 +89,7 @@ function MainProduct({ Add }) {
       exit={{ opacity: 0 }}
     >
       <Container>
-        <Row className="mt-3 text-center">
+        <Row className="mt-3 text-center" data-aos="fade-right">
           <h1 className="fw-bold all-products-side">ALL PRODUCTS</h1>
         </Row>
         <div>
@@ -79,6 +99,7 @@ function MainProduct({ Add }) {
             className="Sort"
             onChange={HandleSort}
             value={sort.by}
+            data-aos="fade-left"
           >
             <option value="default">Sort By</option>
             <option value="Price">Price</option>
@@ -90,6 +111,7 @@ function MainProduct({ Add }) {
             className="Sort"
             onChange={HandleSort}
             value={sort.order}
+            data-aos="fade-left"
           >
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
@@ -98,7 +120,10 @@ function MainProduct({ Add }) {
             <Row>
               {PageData.map((items, index) => (
                 <Col xs={12} sm={6} md={6} lg={3} key={index}>
-                  <Card className="mt-3 mb-3 card-all-products">
+                  <Card
+                    className="mt-3 mb-3 card-all-products"
+                    data-aos="fade-up"
+                  >
                     <NavLink
                       to={`/ShowProduct/${items.ID}`}
                       className=" detail-link-card"
@@ -108,6 +133,7 @@ function MainProduct({ Add }) {
                         src={items.Img1}
                         alt={items.Name}
                         className="img-card-rpoducts"
+                        data-aos="zoom-in"
                       />
                     </NavLink>
 
@@ -131,10 +157,11 @@ function MainProduct({ Add }) {
                           <i class="fa-solid fa-star-half-stroke"></i>
                         </Card.Text>
                       </NavLink>
+
                       <Button
                         className="add-products"
                         onClick={() => {
-                          Add(items, 1);
+                          notify(Add(items, 1));
                         }}
                       >
                         ADD TO CART
@@ -143,6 +170,19 @@ function MainProduct({ Add }) {
                   </Card>
                 </Col>
               ))}
+
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
             </Row>
           </Container>
           <Row>
